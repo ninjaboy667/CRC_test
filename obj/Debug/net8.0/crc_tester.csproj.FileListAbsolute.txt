@@ -1,0 +1,17 @@
+C:\Code\crc_tester\bin\Debug\net8.0\crc_tester.exe
+C:\Code\crc_tester\bin\Debug\net8.0\crc_tester.deps.json
+C:\Code\crc_tester\bin\Debug\net8.0\crc_tester.runtimeconfig.json
+C:\Code\crc_tester\bin\Debug\net8.0\crc_tester.dll
+C:\Code\crc_tester\bin\Debug\net8.0\crc_tester.pdb
+C:\Code\crc_tester\bin\Debug\net8.0\Crc.dll
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.csproj.AssemblyReference.cache
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.AssemblyInfoInputs.cache
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.AssemblyInfo.cs
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.csproj.CoreCompileInputs.cache
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.csproj.CopyComplete
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.dll
+C:\Code\crc_tester\obj\Debug\net8.0\refint\crc_tester.dll
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.pdb
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.genruntimeconfig.cache
+C:\Code\crc_tester\obj\Debug\net8.0\ref\crc_tester.dll
