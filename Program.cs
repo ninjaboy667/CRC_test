@@ -6,27 +6,20 @@ using System.Runtime.InteropServices;
 using Crc;
 using System;
 using System.Text;
-
-Console.WriteLine("Testing:");
-
-CrcBase crc = new CrcBase(8,0x1D, 0xFF, 0xFF, false, false);
-
-int hexValue = 0x054004;
-byte[] hexValue_bytes = new byte[] { (byte)((hexValue >> 16) & 0xFF), (byte)((hexValue >> 8) & 0xFF), (byte)(hexValue & 0xFF) };
-
-// reversing because this is somehow the way it has to be done! per documentation
-byte[] bytes = new byte[] { (byte)(hexValue & 0xFF), (byte)((hexValue >> 8) & 0xFF), (byte)((hexValue >> 16) & 0xFF) };
-
-byte[] resultBytes  = crc.ComputeHash(bytes);
-Console.WriteLine("result:");
-Console.WriteLine(BitConverter.ToString(resultBytes));
+using SpiCommunication;
+using Microsoft.VisualBasic;
 
 
-byte[] combinedBytes = resultBytes.Concat(hexValue_bytes).ToArray();
-Console.WriteLine(BitConverter.ToString(combinedBytes));
+SpiController mycontroller = new SpiController();
 
 
 
 
 
+Console.WriteLine("Global config create SPI ");
+string mycheckstring = mycontroller.GlobalConfig(1,1,0,0,0,0,1,0,0);
+Console.WriteLine(mycheckstring);
 
+Console.WriteLine("Global diagnosis registers 0 ");
+string mycheckstring2 = mycontroller.GlobalDiag0(0,1,1,0,0,0,0,0,0,0,1,1,0);
+Console.WriteLine(mycheckstring);

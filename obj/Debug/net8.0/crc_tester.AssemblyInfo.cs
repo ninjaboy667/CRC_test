@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("crc_tester")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+590134e507715d6581a25f6983377ffec3f174e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("crc_tester")]
 [assembly: System.Reflection.AssemblyTitleAttribute("crc_tester")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -15,3 +15,4 @@ C:\Code\crc_tester\obj\Debug\net8.0\refint\crc_tester.dll
 C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.pdb
 C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.genruntimeconfig.cache
 C:\Code\crc_tester\obj\Debug\net8.0\ref\crc_tester.dll
+C:\Code\crc_tester\obj\Debug\net8.0\crc_tester.sourcelink.json
