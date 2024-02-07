@@ -94,23 +94,247 @@ namespace SpiCommunication
 
             address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
 
-            address |= (VBATUndervoltageDetection == 1) ? 0b000000000000000000000001 << 14 : 0b0;
-            address |= (VBATOvervoltageDetection == 1) ? 0b000000000000000000000001 << 10 : 0b0;
-            address |= (VIOUndervoltageDetection == 1) ? 0b000000000000000000000001 << 9 : 0b0;
-            address |= (VIOOvervoltageDetenction == 1) ? 0b000000000000000000000001 << 8 : 0b0;
-            address |= (VDDUndervoltageDetection == 1) ? 0b000000000000000000000001 << 7 : 0b0;
-            address |= (VDDOverboltageDetection == 1) ? 0b000000000000000000000001 << 6 : 0b0;
-            address |= (ClockFaultDetection == 1) ? 0b000000000000000000000001 << 5 : 0b0;
-            address |= (CentralOvertemperatureError == 1) ? 0b000000000000000000000001 << 4 : 0b0;
-            address |= (CentralOvertemperatureWarning == 1) ? 0b000000000000000000000001 << 3 : 0b0;
-            address |= (ResetOccuredRESNPinLow == 1) ? 0b000000000000000000000001 << 2 : 0b0;
-            address |= (EventOccured == 1) ? 0b000000000000000000000001 << 1 : 0b0;
-            address |= (SPIWatchdogFaultDetection == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (VBATUndervoltageDetection == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (VBATOvervoltageDetection == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (VIOUndervoltageDetection == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (VIOOvervoltageDetenction == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (VDDUndervoltageDetection == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (VDDOverboltageDetection == 1) ? 0b000000000000000000000001 << 5 : 0b0;
+            address |= (ClockFaultDetection == 1) ? 0b000000000000000000000001 << 6 : 0b0;
+            address |= (CentralOvertemperatureError == 1) ? 0b000000000000000000000001 << 7 : 0b0;
+            address |= (CentralOvertemperatureWarning == 1) ? 0b000000000000000000000001 << 8 : 0b0;
+            address |= (ResetOccuredRESNPinLow == 1) ? 0b000000000000000000000001 << 9 : 0b0;
+            address |= (EventOccured == 1) ? 0b000000000000000000000001 << 10 : 0b0;
+            address |= (SPIWatchdogFaultDetection == 1) ? 0b000000000000000000000001 << 14 : 0b0;
 
             string finalstring = AddSpiCrc(address);
 
             return finalstring;
         }
+
+
+        public string GlobalDiag1(
+            int readWrite,
+            int InternalBiasCurrentTooLowDetection,
+            int InternalBiasCurrentTooHighDetection,
+            int Internal2V5SupplyUndervoltageDetection,
+            int Internal2V5SupplyOvervoltageDetection,
+            int InternalReferenceUndervoltageDetection,
+            int InternalReferenceOvervoltageDetection,
+            int InternalPreRegulatorOverVoltageDetection,
+            int InternalMoniteringADCErrorDetection
+
+        )
+        {
+            int address = 0x0004 << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (InternalBiasCurrentTooLowDetection == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (InternalBiasCurrentTooHighDetection == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (Internal2V5SupplyUndervoltageDetection == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (Internal2V5SupplyOvervoltageDetection == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (InternalReferenceUndervoltageDetection == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (InternalReferenceOvervoltageDetection == 1) ? 0b000000000000000000000001 << 5 : 0b0;
+            address |= (InternalPreRegulatorOverVoltageDetection == 1) ? 0b000000000000000000000001 << 6 : 0b0;
+            address |= (InternalMoniteringADCErrorDetection == 1) ? 0b000000000000000000000001 << 15 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+
+        public string GlobalDiag2(
+            int readWrite,
+            int RegisterECCError,
+            int OtpEccError,
+            int OtpMemoryConfigurationComplete
+        )
+        {
+            int address = 0x0005 << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (RegisterECCError == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (OtpEccError == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (OtpMemoryConfigurationComplete == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+
+        public string DiagnosisErrorRegister0(
+            int readWrite,
+            int OpenLoadOrShortToGroundDetectionCh0,
+            int OpenLoadDetectionCh0,
+            int OvercurrentDetectionCh0,
+            int ShortToGroundDetectionCh0,
+            int OvertemperatureErrorDetectionCh0,
+            int OpenLoadOrShortToGroundDetectionCh1,
+            int OpenLoadDetectionCh1,
+            int OvercurrentDetectionCh1,
+            int ShortToGroundDetectionCh1,
+            int OvertemperatureErrorDetectionCh1
+        )
+        {
+            int address = 0x000A << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (OpenLoadOrShortToGroundDetectionCh0 == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (OpenLoadDetectionCh0 == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (OvercurrentDetectionCh0 == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (ShortToGroundDetectionCh0 == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (OvertemperatureErrorDetectionCh0 == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (OpenLoadOrShortToGroundDetectionCh1 == 1) ? 0b000000000000000000000001 << 8 : 0b0;
+            address |= (OpenLoadDetectionCh1 == 1) ? 0b000000000000000000000001 << 9 : 0b0;
+            address |= (OvercurrentDetectionCh1 == 1) ? 0b000000000000000000000001 << 10 : 0b0;
+            address |= (ShortToGroundDetectionCh1 == 1) ? 0b000000000000000000000001 << 11 : 0b0;
+            address |= (OvertemperatureErrorDetectionCh1 == 1) ? 0b000000000000000000000001 << 12 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+
+        public string DiagnosisErrorRegister1(
+            int readWrite,
+            int OpenLoadOrShortToGroundDetectionCh2,
+            int OpenLoadDetectionCh2,
+            int OvercurrentDetectionCh2,
+            int ShortToGroundDetectionCh2,
+            int OvertemperatureErrorDetectionCh2,
+            int OpenLoadOrShortToGroundDetectionCh3,
+            int OpenLoadDetectionCh3,
+            int OvercurrentDetectionCh3,
+            int ShortToGroundDetectionCh3,
+            int OvertemperatureErrorDetectionCh3
+        )
+        {
+            int address = 0x000B << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (OpenLoadOrShortToGroundDetectionCh2 == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (OpenLoadDetectionCh2 == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (OvercurrentDetectionCh2 == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (ShortToGroundDetectionCh2 == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (OvertemperatureErrorDetectionCh2 == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (OpenLoadOrShortToGroundDetectionCh3 == 1) ? 0b000000000000000000000001 << 8 : 0b0;
+            address |= (OpenLoadDetectionCh3 == 1) ? 0b000000000000000000000001 << 9 : 0b0;
+            address |= (OvercurrentDetectionCh3 == 1) ? 0b000000000000000000000001 << 10 : 0b0;
+            address |= (ShortToGroundDetectionCh3 == 1) ? 0b000000000000000000000001 << 11 : 0b0;
+            address |= (OvertemperatureErrorDetectionCh3 == 1) ? 0b000000000000000000000001 << 12 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+        public string DiagnosisWarningRegister0(
+            int readWrite,
+            int IccPwmRegulationWarningDetectionCh0,
+            int IccCurrentRegulationWarningCh0,
+            int OvertemperatureWarningDetectionCh0,
+            int OpenLoadOrShortToGroundWarningDetectionCh0,
+            int OpenLoadOrShortToGroundWarningDetectionPerformedCh0,
+            int IccPwmRegulationWarningDetectionCh1,
+            int IccCurrentRegulationWarningCh1,
+            int OvertemperatureWarningDetectionCh1,
+            int OpenLoadOrShortToGroundWarningDetectionCh1,
+            int OpenLoadOrShortToGroundWarningDetectionPerformedCh1
+        )
+        {
+            int address = 0x0010 << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (IccPwmRegulationWarningDetectionCh0 == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (IccCurrentRegulationWarningCh0 == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (OvertemperatureWarningDetectionCh0 == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionCh0 == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionPerformedCh0 == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (IccPwmRegulationWarningDetectionCh1 == 1) ? 0b000000000000000000000001 << 8 : 0b0;
+            address |= (IccCurrentRegulationWarningCh1 == 1) ? 0b000000000000000000000001 << 9 : 0b0;
+            address |= (OvertemperatureWarningDetectionCh1 == 1) ? 0b000000000000000000000001 << 10 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionCh1 == 1) ? 0b000000000000000000000001 << 11 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionPerformedCh1 == 1) ? 0b000000000000000000000001 << 12 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+
+        public string DiagnosisWarningRegister1(
+            int readWrite,
+            int IccPwmRegulationWarningDetectionCh2,
+            int IccCurrentRegulationWarningCh2,
+            int OvertemperatureWarningDetectionCh2,
+            int OpenLoadOrShortToGroundWarningDetectionCh2,
+            int OpenLoadOrShortToGroundWarningDetectionPerformedCh2,
+            int IccPwmRegulationWarningDetectionCh3,
+            int IccCurrentRegulationWarningCh3,
+            int OvertemperatureWarningDetectionCh3,
+            int OpenLoadOrShortToGroundWarningDetectionCh3,
+            int OpenLoadOrShortToGroundWarningDetectionPerformedCh3
+        )
+        {
+            int address = 0x0010 << 17;
+
+            address |= (readWrite == 1) ? 0b000000000000000000000001 << 16 : 0b0;
+
+            address |= (IccPwmRegulationWarningDetectionCh2 == 1) ? 0b000000000000000000000001 << 0 : 0b0;
+            address |= (IccCurrentRegulationWarningCh2 == 1) ? 0b000000000000000000000001 << 1 : 0b0;
+            address |= (OvertemperatureWarningDetectionCh2 == 1) ? 0b000000000000000000000001 << 2 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionCh2 == 1) ? 0b000000000000000000000001 << 3 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionPerformedCh2 == 1) ? 0b000000000000000000000001 << 4 : 0b0;
+            address |= (IccPwmRegulationWarningDetectionCh3 == 1) ? 0b000000000000000000000001 << 8 : 0b0;
+            address |= (IccCurrentRegulationWarningCh3 == 1) ? 0b000000000000000000000001 << 9 : 0b0;
+            address |= (OvertemperatureWarningDetectionCh3 == 1) ? 0b000000000000000000000001 << 10 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionCh3 == 1) ? 0b000000000000000000000001 << 11 : 0b0;
+            address |= (OpenLoadOrShortToGroundWarningDetectionPerformedCh3 == 1) ? 0b000000000000000000000001 << 12 : 0b0;
+
+            string finalstring = AddSpiCrc(address);
+
+            return finalstring;
+        }
+
+        public string SetPoint(
+
+        )
+        {
+            return "incomplete";
+        }
+
+        public string Mode(
+
+        )
+        {
+            return "incomplete";
+        }
+
+        public string ChannelConfiguration(
+
+        )
+        {
+            return "incomplete";
+        }
+
+        public string ChannelControl(
+
+        )
+        {
+            return "incomplete";
+        }
+        
+
+
+        
+
+
+
+
+
 
 
 
