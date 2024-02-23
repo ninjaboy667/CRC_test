@@ -1,8 +1,6 @@
 
 using Crc; // will need to install this nugget
 
-namespace SpiCommunication
-{
 
     public class SpiController
     {
@@ -543,4 +541,3 @@ namespace SpiCommunication
             return result;
         }
     }
-}

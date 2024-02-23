@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Code\\crc_tester\\crc_tester.csproj": {}
+    "c:\\Code\\crc_tester\\crc_tester.csproj": {}
   },
   "projects": {
-    "C:\\Code\\crc_tester\\crc_tester.csproj": {
+    "c:\\Code\\crc_tester\\crc_tester.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Code\\crc_tester\\crc_tester.csproj",
+        "projectUniqueName": "c:\\Code\\crc_tester\\crc_tester.csproj",
         "projectName": "crc_tester",
-        "projectPath": "C:\\Code\\crc_tester\\crc_tester.csproj",
+        "projectPath": "c:\\Code\\crc_tester\\crc_tester.csproj",
         "packagesPath": "C:\\Users\\ebarber\\.nuget\\packages\\",
-        "outputPath": "C:\\Code\\crc_tester\\obj\\",
+        "outputPath": "c:\\Code\\crc_tester\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ebarber\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -41,6 +41,14 @@
             "CrcDotNET": {
               "target": "Package",
               "version": "[1.0.3, )"
+            },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.Management": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -59,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
