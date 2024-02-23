@@ -164,6 +164,7 @@ static void Main()
         currentControl currentline = new currentControl();
 
         currentline.stepup(port, (decimal)0.1, (decimal)1.1,11000,11);
+        currentline.stepup(port, (decimal)1.1, (decimal)0.1,11000,11);
 
 
         //Console.WriteLine(commandinput);
