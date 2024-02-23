@@ -529,7 +529,19 @@ using Crc; // will need to install this nugget
             // convert the bytes result back into hexstring for SPI terminal
             string hexString = BitConverter.ToString(resultByte).Replace("-", "");
 
-            return hexString;
+            char firstChar = hexString[0];
+            if (char.IsLetter(firstChar))
+            {
+            // If the first character is a letter, add "0" to the beginning of the string
+            hexString = "0" + hexString;
+            }
+            hexString = hexString.ToLower();
+            string mytest = hexString.ToLower();
+
+
+            return mytest;
+
+            //return hexString;
         }
 
 

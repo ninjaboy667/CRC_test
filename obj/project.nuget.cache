@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wnQF9LRVQ1/0tI/r7Ar0azUT7SYSpGBIC+uUjUUmEVr6kceeoxrXmp8I6hcWuDLUPoV2NZNsd8CTIdIG0Fqw5A==",
+  "dgSpecHash": "MFkACSwHEUHu92Zs1wawKvS29+zB+rUkcaUYoldaYKpLl5g43X/maPAoZZzsFpkX50w6ukdvW2alfkEZiif+rQ==",
   "success": true,
-  "projectFilePath": "c:\\Code\\crc_tester\\crc_tester.csproj",
+  "projectFilePath": "C:\\Code\\crc_tester\\crc_tester.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ebarber\\.nuget\\packages\\crcdotnet\\1.0.3\\crcdotnet.1.0.3.nupkg.sha512",
     "C:\\Users\\ebarber\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

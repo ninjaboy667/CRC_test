@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Code\\crc_tester\\crc_tester.csproj": {}
+    "C:\\Code\\crc_tester\\crc_tester.csproj": {}
   },
   "projects": {
-    "c:\\Code\\crc_tester\\crc_tester.csproj": {
+    "C:\\Code\\crc_tester\\crc_tester.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Code\\crc_tester\\crc_tester.csproj",
+        "projectUniqueName": "C:\\Code\\crc_tester\\crc_tester.csproj",
         "projectName": "crc_tester",
-        "projectPath": "c:\\Code\\crc_tester\\crc_tester.csproj",
+        "projectPath": "C:\\Code\\crc_tester\\crc_tester.csproj",
         "packagesPath": "C:\\Users\\ebarber\\.nuget\\packages\\",
-        "outputPath": "c:\\Code\\crc_tester\\obj\\",
+        "outputPath": "C:\\Code\\crc_tester\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ebarber\\AppData\\Roaming\\NuGet\\NuGet.Config"

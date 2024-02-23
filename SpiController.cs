@@ -530,8 +530,21 @@ namespace SpiCommunication
 
             // convert the bytes result back into hexstring for SPI terminal
             string hexString = BitConverter.ToString(resultByte).Replace("-", "");
+            
+            
+            // NOT 100% sure why I need this, but for whatever reason it doesnt like capital letters and
+            // needs a 0 in front if the first is a letter.. As far as I can tell
+            char firstChar = hexString[0];
+            if (char.IsLetter(firstChar))
+            {
+            // If the first character is a letter, add "0" to the beginning of the string
+            hexString = "0" + hexString;
+            }
+            hexString = hexString.ToLower();
+            string mytest = hexString.ToLower();
 
-            return hexString;
+
+            return mytest;
         }
 
 
